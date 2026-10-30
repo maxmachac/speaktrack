@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SpeakTrack</title>
+    <link rel="stylesheet" href="https://unpkg.com/daisyui@5.7.50/daisyui.css" />
+    <link rel="stylesheet" href="./src/style.css" />
+    <script src="https://unpkg.com/@tailwindcss/browser@4.3.3"></script>
+  </head>
+  <body>
+    <header class="navbar border-b border-base-300 bg-base-100 px-5">
+      <h2 class="text-xl font-semibold">SpeakTrack</h2>
+    </header>
+    <main class="mx-auto w-full max-w-3xl px-5 py-8">
+      <div id="topics" class="topic-container grid gap-3" aria-label="Topics" aria-live="polite"></div>
+    </main>
+    <script src="./src/main.js" defer></script>
+  </body>
+</html>
