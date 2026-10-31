@@ -5,13 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SpeakTrack</title>
   </head>
-  <body>
-    <header class="site-header">
-      <h2 class="site-title">SpeakTrack</h2>
+  <body data-theme="dark">
+    <header class="header">
+      <h2 class="title">SpeakTrack</h2>
+      <label class="theme-control">
+        <span>Dark mode</span>
+        <span class="theme-icon" aria-hidden="true">☾</span>
+        <input
+          class="theme-switch"
+          type="checkbox"
+          role="switch"
+          aria-label="Dark mode"
+          checked
+        />
+      </label>
     </header>
     <main class="page-content">
       <div id="topics" class="topic-container" aria-label="Topics" aria-live="polite"></div>
     </main>
+    
     <script type="module" src="./src/script.js"></script>
   </body>
 </html>

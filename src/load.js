@@ -8,6 +8,14 @@ function showMessage(message) {
   topicsContainer.append(paragraph);
 }
 
+function toggleTopicStrikeThrough(position) {
+  const topic = topicsContainer.children.item(position - 1);
+  if (!(topic instanceof HTMLButtonElement)) return;
+
+  const isStruckThrough = topic.classList.toggle('is-struck-through');
+  topic.setAttribute('aria-pressed', String(isStruckThrough));
+}
+
 async function showTopics() {
   try {
     const response = await fetch('./topics.json', { cache: 'no-store' });
@@ -19,11 +27,14 @@ async function showTopics() {
     topicsContainer.replaceChildren();
     for (const [index, topic] of topics.entries()) {
       if (topic === null || topic === undefined || String(topic).trim() === '') continue;
-      const paragraph = document.createElement('p');
-      paragraph.className = 'topic-item';
-      paragraph.style.setProperty('--item-index', index);
-      paragraph.textContent = String(topic);
-      topicsContainer.append(paragraph);
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'topic-item';
+      button.setAttribute('aria-pressed', 'false');
+      button.textContent = String(topic);
+      const position = topicsContainer.children.length + 1;
+      button.addEventListener('click', () => toggleTopicStrikeThrough(position));
+      topicsContainer.append(button);
     }
 
     if (topicsContainer.children.length === 0) showMessage('No topics found in topics.json.');
