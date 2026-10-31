@@ -3,7 +3,7 @@ const topicsContainer = document.querySelector('#topics');
 function showMessage(message) {
   topicsContainer.replaceChildren();
   const paragraph = document.createElement('p');
-  paragraph.className = 'topic-item alert alert-warning message';
+  paragraph.className = 'topic-item message';
   paragraph.textContent = message;
   topicsContainer.append(paragraph);
 }
@@ -20,7 +20,7 @@ async function showTopics() {
     for (const [index, topic] of topics.entries()) {
       if (topic === null || topic === undefined || String(topic).trim() === '') continue;
       const paragraph = document.createElement('p');
-      paragraph.className = 'topic-item card border border-base-300 bg-base-100 shadow-sm';
+      paragraph.className = 'topic-item';
       paragraph.style.setProperty('--item-index', index);
       paragraph.textContent = String(topic);
       topicsContainer.append(paragraph);
