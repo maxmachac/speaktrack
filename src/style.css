@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&display=swap");
 
 :root {
-  font-family: 'DM Sans', sans-serif;
+  font-family: "DM Sans", sans-serif;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   --page-background: #f3f6f4;
@@ -20,7 +20,7 @@
   color-scheme: light;
 }
 
-body[data-theme='dark'] {
+body[data-theme="dark"] {
   --page-background: #0b1410;
   --surface-background: #17231b;
   --container-background: #101b14;
@@ -102,7 +102,7 @@ body {
   height: 16px;
   border-radius: 50%;
   background: var(--switch-knob);
-  content: '';
+  content: "";
   transition: transform 160ms ease;
 }
 
@@ -124,8 +124,7 @@ body {
 
 .topic-container {
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
+  flex-direction: column;
   gap: 12px;
   padding: 16px;
   border: 1px solid var(--container-border);
@@ -137,6 +136,7 @@ body {
 .topic-item {
   display: flex;
   align-items: center;
+  width: 100%;
   min-height: 72px;
   justify-content: center;
   padding: 18px 20px;
@@ -148,7 +148,7 @@ body {
   font-family: inherit;
   font-size: 16px;
   line-height: 1.5;
-  text-align: center;
+  text-align: left;
   overflow-wrap: anywhere;
   cursor: pointer;
 }
@@ -173,6 +173,5 @@ body {
 @media (max-width: 560px) {
   .topic-container {
     padding: 12px;
-    grid-template-columns: minmax(0, 1fr);
   }
 }

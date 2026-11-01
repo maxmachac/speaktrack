@@ -1,14 +1,18 @@
 {
   "name": "speaktrack",
-  "private": true,
   "version": "1.0.0",
+  "private": true,
   "type": "module",
-  "packageManager": "pnpm@12.16.1",
   "scripts": {
     "dev": "vp dev",
     "build": "vp build",
     "preview": "vp preview",
     "check": "vp check"
+  },
+  "dependencies": {
+    "@tanstack/react-router": "^1.170.46",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
   },
   "devDependencies": {
     "@tanstack/router-plugin": "^1.168.48",
@@ -19,9 +23,5 @@
     "vite": "npm:@voidzero-dev/vite-plus-core@1.4.0",
     "vite-plus": "1.4.0"
   },
-  "dependencies": {
-    "@tanstack/react-router": "^1.170.46",
-    "react": "^19.3.1",
-    "react-dom": "^19.3.1"
-  }
+  "packageManager": "pnpm@12.16.1"
 }
